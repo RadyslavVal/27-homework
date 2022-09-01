@@ -5,6 +5,7 @@ export const addPost = (post) => {
     return {
         type: ADD_POST,
         payload: {
+            id: Date.now(),
             author: {
                 name: author.name,
                 avatar: author.avatar,
@@ -21,4 +22,3 @@ export const addPost = (post) => {
         },
     }
 }
-

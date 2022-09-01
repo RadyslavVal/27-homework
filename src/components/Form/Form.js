@@ -7,6 +7,7 @@ import { addPost } from '../../redux/action';
 class Form extends Component {
 
     state = {
+        id: '',
         author: {},
         content: '',
         image: '',
@@ -21,7 +22,7 @@ class Form extends Component {
     onChangeSelect = () => {
         let select = document.getElementById('form-select');
         let nameText = select.value;
-        let authorInfo = this.props.authors.filter(info => info.author.name == nameText)[0].author;
+        let authorInfo = this.props.authors.filter(info => info.author.name === nameText)[0].author;
         this.setState({ author: { ...authorInfo } })
     }
 
@@ -50,25 +51,26 @@ class Form extends Component {
     onChangePost = () => {
         let select = document.getElementById('form-select');
         let nameText = select.value;
-        let authorInfo = this.props.authors.filter(info => info.author.name == nameText)[0].author;
+        let authorInfo = this.props.authors.filter(info => info.author.name === nameText)[0].author;
         this.setState({ author: { ...authorInfo } })
     }
-    onSubmitInput = () => {
 
+    onSubmitInput = () => {
         let text = document.getElementById('text');
         let linkInput = document.getElementById('link');
-        if (linkInput.style.backgroundColor == "rgb(27, 150, 99)" && text.value.length > 1) {
+        if (linkInput.style.backgroundColor === "rgb(27, 150, 99)" && text.value.length > 1) {
             this.props.addPost(this.state);
             linkInput.value = ''
             text.value = ''
             linkInput.style.backgroundColor = '#d1d1d1'
             this.state = {
+                id: '',
                 author: {},
                 content: '',
                 image: '',
                 date: '',
                 postInfo: {
-                    likes: '0',
+                    likes:'0',
                     comments: '0',
                     reposts: '0',
                 }

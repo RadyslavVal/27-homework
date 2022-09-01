@@ -1,7 +1,8 @@
-import { ADD_POST, } from "./types";
+import { ADD_POST } from "./types";
 
 const initialState = [
     {
+        id: 3,
         author: {
             name: "Sheev Palpatine",
             avatar: "https://starwars-visualguide.com//assets/img/characters/21.jpg",
@@ -17,6 +18,7 @@ const initialState = [
         }
     },
     {
+        id: 2,
         author: {
             name: "Luke Skywalker",
             avatar: "https://starwars-visualguide.com/assets/img/characters/1.jpg",
@@ -28,10 +30,11 @@ const initialState = [
         postInfo: {
             likes: '8',
             comments: '17',
-            reposts: '4',
+            reposts: '6',
         }
     },
     {
+        id: 1,
         author: {
             name: "Anakin skywalker",
             avatar: "https://starwars-visualguide.com/assets/img/characters/11.jpg",
@@ -41,7 +44,7 @@ const initialState = [
         image: "https://specials-images.forbesimg.com/imageserve/5e63b3c8e1e617000759130e/960x0.jpg?fit=scale",
         date: "15.07.2022",
         postInfo: {
-            likes: '23',
+            likes: '22',
             comments: '111',
             reposts: '33',
         }
